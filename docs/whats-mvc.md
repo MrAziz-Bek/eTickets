@@ -43,3 +43,5 @@
   ![images](images/stepbystep.jpg)
   ![images](images/uml.jpg)
   The pictures above show what happens in a MVC web app when a user clicks a button, from the perspective of the user.
+---
+© [educative:MVC-Tutorial](https://www.educative.io/blog/mvc-tutorial)
