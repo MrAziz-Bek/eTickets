@@ -5,5 +5,6 @@
 - MVC documentation
   - [What is MVC?](docs/whats-mvc.md)
   - [What is DbContext](docs/whats-dbcontext.md)
+  - [Models Relationships](docs/images/models-relationships.png)
 ---
 © [MrAziz-Bek](https://github.com/MrAziz-Bek)
