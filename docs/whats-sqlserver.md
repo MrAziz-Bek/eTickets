@@ -1,0 +1,2 @@
+# What's SQL Server
+- SQL Server is a relational database management system, or RDBMS, developed and marketed by Microsoft.<br/><br/>Similar to other RDBMS software, SQL Server is built on top of SQL, a standard programming language for interacting with relational databases. SQL Server is tied to Transact-SQL, or T-SQL, the Microsoft’s implementation of SQL that adds a set of proprietary programming constructs.<br/><br/>© [sqlservertutorial.net: What's SQL Server](https://www.sqlservertutorial.net/getting-started/what-is-sql-server)
