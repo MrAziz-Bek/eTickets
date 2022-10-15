@@ -2,6 +2,8 @@
 
 - An app for buying movie tickets online.
 ---
+- Project: [eTickets](src/eTickets)
+---
 - MVC documentation
   - [What is MVC?](docs/whats-mvc.md)
   - [What is DbContext](docs/whats-dbcontext.md)
