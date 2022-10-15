@@ -5,5 +5,7 @@ public enum MovieCategory
     Action,
     Comedy,
     Drama,
-    Documentary
+    Documentary,
+    Cartoon,
+    Horror
 }
