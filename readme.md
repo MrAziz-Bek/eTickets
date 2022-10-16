@@ -16,5 +16,6 @@
   - [What is Dependency Injection (DI)](docs/whats-dependency-injection.md)
   - [What is Inversion-of-Control](docs/whats-inversion-of-control.md)
   - [How and when to use `async` and `await`](docs/how-and-when-to-use-async-and-await.md)
+  - [What is the use of `ViewData`](docs/whats-the-use-of-viewdata.md)
 ---
 © [MrAziz-Bek](https://github.com/MrAziz-Bek)

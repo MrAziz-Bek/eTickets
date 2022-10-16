@@ -22,6 +22,6 @@ public class ActorsController : Controller
     public IActionResult Index()
     {
         var data = _context.Actors.ToList();
-        return View();
+        return View(data);
     }
 }
