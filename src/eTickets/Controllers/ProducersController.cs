@@ -11,13 +11,11 @@ namespace eTickets.Controllers;
 
 [Route("[controller]")]
 public class ProducersController : Controller
-{
-    private readonly ILogger<ProducersController> _logger;    
+{ 
     private readonly AppDbContext _context;
 
-    public ProducersController(ILogger<ProducersController> logger, AppDbContext context)
+    public ProducersController(AppDbContext context)
     {
-        _logger = logger;
         _context = context;
     }
 

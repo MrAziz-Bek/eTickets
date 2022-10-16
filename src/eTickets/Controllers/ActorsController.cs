@@ -12,12 +12,10 @@ namespace eTickets.Controllers;
 [Route("[controller]")]
 public class ActorsController : Controller
 {
-    private readonly ILogger<ActorsController> _logger;
     private readonly AppDbContext _context;
 
-    public ActorsController(ILogger<ActorsController> logger, AppDbContext context)
+    public ActorsController(AppDbContext context)
     {
-        _logger = logger;
         _context = context;
     }
 
