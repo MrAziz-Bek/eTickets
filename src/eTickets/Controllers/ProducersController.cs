@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using eTickets.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace eTickets.Controllers;
@@ -19,8 +20,9 @@ public class ProducersController : Controller
         _context = context;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
+        var allProducers = await _context.Producers.ToListAsync();
         return View();
     }
 }

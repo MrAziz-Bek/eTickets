@@ -15,5 +15,6 @@
   - [What is Singleton Pattern](docs/whats-singleton.md)
   - [What is Dependency Injection (DI)](docs/whats-dependency-injection.md)
   - [What is Inversion-of-Control](docs/whats-inversion-of-control.md)
+  - [How and when to use `async` and `await`](docs/how-and-when-to-use-async-and-await.md)
 ---
 © [MrAziz-Bek](https://github.com/MrAziz-Bek)
