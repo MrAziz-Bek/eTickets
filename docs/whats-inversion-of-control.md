@@ -29,4 +29,4 @@
     SpellChecker sc = new SpellChecker(); // dependency
     TextEditor textEditor = new TextEditor(sc);
     ```
-    Now the client creating the `TextEditor` class has control over which `SpellChecker` implementation to use because we're injecting the dependency into the `TextEditor` signature.
+    Now the client creating the `TextEditor` class has control over which `SpellChecker` implementation to use because we're injecting the dependency into the `TextEditor` signature.<br/><br/>© [stack**overflow**](https://stackoverflow.com/a/3140)
