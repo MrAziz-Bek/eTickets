@@ -11,5 +11,6 @@
   - [What is `OnModelCreating` method](docs/whats-onmodelcreating.md)
   - [What is SQL Server](docs/whats-sqlserver.md)
   - [Adding Migration](docs/adding-migration.md)
+  - [What is Controller in MVC](docs/whats-controller.md)
 ---
 © [MrAziz-Bek](https://github.com/MrAziz-Bek)

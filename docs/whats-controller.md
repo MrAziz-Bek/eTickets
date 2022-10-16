@@ -1,0 +1,5 @@
+# What's Controller in MVC
+- A C# class that is responsible for controlling the way that a user interacts with an MVC application.<br/><br/>
+---
+- The *Controller* in MVC architecture handles any incoming **URL** request. The *Controller* is a class, derived from the base class System.Web.Mvc.Controller. *Controller* class contains public methods called Action methods. *Controller* and its action method handles incoming browser requests, retrieves necessary model data and returns appropriate responses.<br/><br/>In **ASP.NET MVC**, every controller class name must end with a word "*Controller*". For example, the home page *controller* name must be HomeController, and for the student page, it must be the StudentController. Also, every *controller* class must be located in the *Controller* folder of the MVC folder structure.<br/><br/>
+© [TutorialsTeacher](https://www.tutorialsteacher.com/mvc/mvc-controller)
