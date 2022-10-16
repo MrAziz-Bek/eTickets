@@ -2,7 +2,7 @@
 1. Install packages:
     - `Microsoft.EntityFrameworkCore.Tools`
     - `Microsoft.EntityFrameworkCore.Design`
-2. Configure Database provider(`Program.cs`):
+2. Configure Database provider in `Program.cs`:
     ```
     builder.Services.AddDbContext<TContext>(options =>
     {
