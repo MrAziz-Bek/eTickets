@@ -17,5 +17,6 @@
   - [What is Inversion-of-Control](docs/whats-inversion-of-control.md)
   - [How and when to use `async` and `await`](docs/how-and-when-to-use-async-and-await.md)
   - [What is the use of `ViewData`](docs/whats-the-use-of-viewdata.md)
+  - [Service Lifetimes](docs/service-lifetimes.md)
 ---
 © [MrAziz-Bek](https://github.com/MrAziz-Bek)
