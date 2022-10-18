@@ -5,12 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using eTickets.Data;
 using eTickets.Data.Services;
+using eTickets.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace eTickets.Controllers;
 
-[Route("[controller]")]
 public class ActorsController : Controller
 {
     private readonly IActorsService _service;
@@ -26,10 +26,30 @@ public class ActorsController : Controller
         return View(data);
     }
 
-    // Get: Actors/Create
-    [HttpGet("[action]")]
+    // // Get: Actors/Create
     public IActionResult Create()
     {
         return View();
+    }
+
+    [HttpPost]
+    public IActionResult Create([Bind("Fullname,ProfilePictureURL,Bio")] Actor actor)
+    {
+        var errors = ModelState
+                        .Where(x => x.Value.Errors.Count > 0)
+                        .Select(x => new { x.Key, x.Value.Errors })
+                        .ToArray();
+
+        foreach (var error in errors)
+        {
+            System.Console.WriteLine(error.Key + ": " + error.Errors);
+        }
+
+        if (!ModelState.IsValid)
+        {
+            return View(actor);
+        }
+        _service.Add(actor);
+        return RedirectToAction(nameof(Index));
     }
 }
