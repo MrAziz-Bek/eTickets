@@ -25,4 +25,11 @@ public class ActorsController : Controller
         var data = await _service.GetAll();
         return View(data);
     }
+
+    // Get: Actors/Create
+    [HttpGet("[action]")]
+    public IActionResult Create()
+    {
+        return View();
+    }
 }
