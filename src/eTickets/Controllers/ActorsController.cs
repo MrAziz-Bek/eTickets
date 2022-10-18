@@ -35,16 +35,6 @@ public class ActorsController : Controller
     [HttpPost]
     public IActionResult Create([Bind("Fullname,ProfilePictureURL,Bio")] Actor actor)
     {
-        var errors = ModelState
-                        .Where(x => x.Value.Errors.Count > 0)
-                        .Select(x => new { x.Key, x.Value.Errors })
-                        .ToArray();
-
-        foreach (var error in errors)
-        {
-            System.Console.WriteLine(error.Key + ": " + error.Errors);
-        }
-
         if (!ModelState.IsValid)
         {
             return View(actor);
