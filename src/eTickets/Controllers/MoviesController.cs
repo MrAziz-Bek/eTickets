@@ -10,7 +10,6 @@ using Microsoft.Extensions.Logging;
 
 namespace eTickets.Controllers;
 
-[Route("[controller]")]
 public class MoviesController : Controller
 {
     private readonly AppDbContext _context;

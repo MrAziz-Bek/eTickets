@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace eTickets.Controllers;
 
-[Route("[controller]")]
+
 public class ProducersController : Controller
 { 
     private readonly AppDbContext _context;
