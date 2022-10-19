@@ -18,9 +18,11 @@ public class ActorsService : IActorsService
         await _context.SaveChangesAsync();
     }
 
-    public void Delete(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var actor = await _context.Actors.FirstOrDefaultAsync(a => a.Id == id);
+        _context.Actors.Remove(actor);
+        await _context.SaveChangesAsync();
     }
 
     public async Task<IEnumerable<Actor>> GetAllAsync()
