@@ -2,7 +2,7 @@
 
 - An app for buying movie tickets online.
 ---
-- Source: [eTickets](src/eTickets)
+- Source Code: [eTickets](src/eTickets)
 ---
 - MVC documentation
   - [What is MVC?](docs/whats-mvc.md)
