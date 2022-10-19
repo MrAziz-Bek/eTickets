@@ -22,7 +22,7 @@ public class ActorsController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var data = await _service.GetAll();
+        var data = await _service.GetAllAsync();
         return View(data);
     }
 
@@ -33,13 +33,24 @@ public class ActorsController : Controller
     }
 
     [HttpPost]
-    public IActionResult Create([Bind("Fullname,ProfilePictureURL,Bio")] Actor actor)
+    public async Task<IActionResult> Create([Bind("Fullname,ProfilePictureURL,Bio")] Actor actor)
     {
         if (!ModelState.IsValid)
         {
             return View(actor);
         }
-        _service.Add(actor);
+        await _service.AddAsync(actor);
         return RedirectToAction(nameof(Index));
     }
+
+    //Get: Actors/Details/{id}
+    public async Task<IActionResult> Details(int id)
+    {
+        var actorDetails = await _service.GetByIdAsync(id);
+        
+        if (actorDetails is null)
+            return View("Empty");
+
+        return View(actorDetails);
+    }    
 }
