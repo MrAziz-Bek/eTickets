@@ -13,7 +13,7 @@ namespace eTickets.Controllers;
 
 
 public class ProducersController : Controller
-{ 
+{
     private readonly IProducersService _service;
 
     public ProducersController(IProducersService service)
@@ -25,5 +25,16 @@ public class ProducersController : Controller
     {
         var allProducers = await _service.GetAllAsync();
         return View(allProducers);
+    }
+
+    //GET: producers/details/{id}
+    public async Task<IActionResult> Details(int id)
+    {
+        var producerDetails = await _service.GetByIdAsync(id);
+
+        if (producerDetails is null)
+            return View("NotFound");
+
+        return View(producerDetails);
     }
 }
