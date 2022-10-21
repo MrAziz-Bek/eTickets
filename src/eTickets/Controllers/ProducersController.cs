@@ -54,4 +54,30 @@ public class ProducersController : Controller
         await _service.AddAsync(producer);
         return RedirectToAction(nameof(Index));
     }
+
+    //GET: producers/edit/{id}
+    public async Task<IActionResult> Edit(int id)
+    {
+        var producerDetails = await _service.GetByIdAsync(id);
+
+        if (producerDetails is null)
+            return View("NotFound");
+
+        return View(producerDetails);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit(int id, [Bind("Id,ProfilePictureURL,Fullname,Bio")] Producer producer)
+    {
+        if (!ModelState.IsValid)
+            return View(producer);
+
+        if (id == producer.Id)
+        {
+            await _service.UpdateAsync(id, producer);
+            return RedirectToAction(nameof(Index));
+        }
+
+        return View(producer);
+    }
 }
