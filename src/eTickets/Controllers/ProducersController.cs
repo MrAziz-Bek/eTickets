@@ -80,4 +80,27 @@ public class ProducersController : Controller
 
         return View(producer);
     }
+
+    //GET: producers/delete/{id}
+    public async Task<IActionResult> Delete(int id)
+    {
+        var producerDetails = await _service.GetByIdAsync(id);
+
+        if (producerDetails is null)
+            return View("NotFound");
+
+        return View(producerDetails);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        var producerDetails = await _service.GetByIdAsync(id);
+
+        if (producerDetails is null)
+            return View("NotFound");
+
+        await _service.DeleteAsync(id);
+        return RedirectToAction(nameof(Index));
+    }
 }
