@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using eTickets.Data;
 using eTickets.Data.Services;
+using eTickets.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -36,5 +37,21 @@ public class ProducersController : Controller
             return View("NotFound");
 
         return View(producerDetails);
+    }
+
+    //GET: producers/create
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create([Bind("ProfilePictureURL,Fullname,Bio")] Producer producer)
+    {
+        if (!ModelState.IsValid)
+            return View(producer);
+
+        await _service.AddAsync(producer);
+        return RedirectToAction(nameof(Index));
     }
 }
