@@ -22,7 +22,7 @@ public class MoviesController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var allMovies = await _service.GetAllAsync();
+        var allMovies = await _service.GetAllAsync(m => m.Cinema);
         return View(allMovies);
     }
 }
