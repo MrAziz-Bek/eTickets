@@ -19,5 +19,5 @@
   - [What is the use of `ViewData`](docs/whats-the-use-of-viewdata.md)
   - [Service Lifetimes](docs/service-lifetimes.md)
   - [What is `Expression` in LINQ](docs/whats-expression-in-linq.md)
----
-© [MrAziz-Bek](https://github.com/MrAziz-Bek)
+  - [What is `Aggregate` in LINQ](docs/whats-aggregate-method.md)
+    - [LINQ `Aggregate` algorithm explained](docs/linq-aggregate-algorithm-explained.md)
