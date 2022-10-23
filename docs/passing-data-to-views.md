@@ -1,0 +1,13 @@
+# Passing data to a Views
+- Strongly Typed
+  - `ViewModel`
+- Weakly Typed
+  - `ViewData`
+  - `ViewBag`
+---
+- A `ViewModel` is the model that is specified in the view
+- A `ViewData` is a dictionary with string keys and object values
+- A `ViewBag` is a wrapper built around `ViewData`
+---
+- `ViewData` requires type casting
+- `ViewBag` doesn't require type casting

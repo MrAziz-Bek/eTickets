@@ -21,3 +21,4 @@
   - [What is `Expression` in LINQ](docs/whats-expression-in-linq.md)
   - [What is `Aggregate` in LINQ](docs/whats-aggregate-method.md)
     - [LINQ `Aggregate` algorithm explained](docs/linq-aggregate-algorithm-explained.md)
+  - [Passing data to views](docs/passing-data-to-views.md)
