@@ -8,4 +8,5 @@ public interface IMoviesService : IEntityBaseRepository<Movie>
 {
     Task<Movie> GetMovieByIdAsync(int id);
     Task<NewMovieDropdownsViewModel> GetNewMovieDropdownsValues();
+    Task AddNewMovieAsync(NewMovieViewModel data);
 }

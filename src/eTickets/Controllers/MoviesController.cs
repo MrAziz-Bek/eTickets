@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using eTickets.Data;
 using eTickets.Data.Services;
+using eTickets.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -44,5 +45,22 @@ public class MoviesController : Controller
         ViewBag.Actors = new SelectList(movieDropDownsData.Actors, "Id", "Fullname");
 
         return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(NewMovieViewModel movie)
+    {
+        if (!ModelState.IsValid)
+        {
+            var movieDropDownsData = await _service.GetNewMovieDropdownsValues();
+            ViewBag.Cinemas = new SelectList(movieDropDownsData.Cinemas, "Id", "Name");
+            ViewBag.Producers = new SelectList(movieDropDownsData.Producers, "Id", "Fullname");
+            ViewBag.Actors = new SelectList(movieDropDownsData.Actors, "Id", "Fullname");
+
+            return View(movie);
+        }
+
+        await _service.AddNewMovieAsync(movie);
+        return RedirectToAction(nameof(Index));
     }
 }
