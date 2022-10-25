@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using eTickets.Data;
 using eTickets.Data.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -34,10 +35,13 @@ public class MoviesController : Controller
     }
 
     //GET: Movies/Create
-    public IActionResult Create()
+    public async Task<IActionResult> Create()
     {
-        ViewData["Welcome"] = "Welcome to our store";
-        ViewBag.Description  = "This is the store description";
+        var movieDropDownsData = await _service.GetNewMovieDropdownsValues();
+
+        ViewBag.Cinemas = new SelectList(movieDropDownsData.Cinemas, "Id", "Name");
+        ViewBag.Producers = new SelectList(movieDropDownsData.Producers, "Id", "Fullname");
+        ViewBag.Actors = new SelectList(movieDropDownsData.Actors, "Id", "Fullname");
 
         return View();
     }
