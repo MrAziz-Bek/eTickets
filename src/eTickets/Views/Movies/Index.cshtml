@@ -17,9 +17,10 @@
                     <div class="col-md-12">
                         <div class="card-header text-white bg-info">
                             <p class="card-text">
-                            <h5 class="card-title">
-                                @item.Name <a class="text-white float-right" style="position: float-right;"><i class="bi bi-pencil-square"></i></a>
-                            </h5>
+                                <h5 class="card-title">
+                                    @item.Name
+                                    <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
+                                </h5>
                             </p>
                         </div>
                     </div>
