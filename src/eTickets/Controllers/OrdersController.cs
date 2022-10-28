@@ -24,6 +24,15 @@ public class OrdersController : Controller
         _ordersService = ordersService;
     }
 
+    public async Task<IActionResult> Index()
+    {
+        var userId = string.Empty;
+
+        var orders = await _ordersService.GetOrdersByUserIdAsync(userId);
+
+        return View(orders);
+    }
+
     public IActionResult ShoppingCart()
     {
         var items = _shoppingCart.GetShoppingCartItems();
