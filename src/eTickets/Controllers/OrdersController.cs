@@ -35,4 +35,15 @@ public class OrdersController : Controller
 
         return View(response);
     }
+
+    public async Task<RedirectToActionResult> AddItemToShoppingCart(int id)
+    {
+        var item = await _moviesService.GetByIdAsync(id);
+
+        if (item is not null)
+        {
+            _shoppingCart.AddItemToCart(item);
+        }
+        return RedirectToAction(nameof(ShoppingCart));
+    }
 }
