@@ -14,6 +14,27 @@ public class ShoppingCart
         _context = context;
     }
 
+    public void AddItemToCart(Movie movie)
+    {
+        var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(s => s.Movie.Id == movie.Id && s.ShoppingCartId == ShoppingCartId);
+
+        if (shoppingCartItem is null)
+        {
+            shoppingCartItem = new ShoppingCartItem()
+            {
+                ShoppingCartId = ShoppingCartId,
+                Movie = movie,
+                Amount = 1
+            };
+
+            _context.ShoppingCartItems.Add(shoppingCartItem);
+        } else
+        {
+            shoppingCartItem.Amount++;
+        }
+        _context.SaveChanges();
+    }
+
     public List<ShoppingCartItem> GetShoppingCartItems()
     {
         return ShoppingCartItems ??
