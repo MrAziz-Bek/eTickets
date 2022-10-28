@@ -24,3 +24,4 @@
   - [Passing data to views](docs/passing-data-to-views.md)
   - [ASP.NET MVC Dropdown List From SelectList](https://stackoverflow.com/questions/20242981/asp-net-mvc-dropdown-list-from-selectlist)
   - [What is Partial View](docs/whats-partial-view.md)
+  - [ViewComponent](docs/viewcomponents.md)
