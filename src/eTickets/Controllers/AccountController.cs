@@ -9,6 +9,7 @@ using eTickets.Data.ViewModels;
 using eTickets.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace eTickets.Controllers;
@@ -25,6 +26,9 @@ public class AccountController : Controller
         _signInManager = signInManager;
         _context = context;
     }
+
+    public async Task<IActionResult> Users()
+        => View(await _context.Users.ToListAsync());
 
     public IActionResult Login()
         => View(new LoginViewModel());
