@@ -39,7 +39,8 @@ public class MoviesController : Controller
 
         if (!string.IsNullOrEmpty(searchString))
         {
-            var filtered = allMovies.Where(m => m.Name.Contains(searchString) || m.Description.Contains(searchString)).ToList();
+            var filtered = allMovies.Where(m => string.Equals(m.Name, searchString, StringComparison.CurrentCultureIgnoreCase)
+                                        || string.Equals(m.Description, searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
             return View(nameof(Index), filtered);
         }
