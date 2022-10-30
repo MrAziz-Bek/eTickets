@@ -9,9 +9,11 @@ using eTickets.Data.Services;
 using eTickets.Data.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace eTickets.Controllers;
 
+[Authorize]
 public class OrdersController : Controller
 {
     private readonly IMoviesService _moviesService;
