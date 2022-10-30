@@ -55,4 +55,7 @@ public class AccountController : Controller
         TempData["Error"] = "Wrong credentials. Please, try again!";
         return View(loginViewModel);
     }
+
+    public IActionResult Register()
+        => View(new RegisterViewModel());
 }
