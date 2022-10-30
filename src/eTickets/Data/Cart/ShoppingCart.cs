@@ -87,5 +87,7 @@ public class ShoppingCart
 
         _context.ShoppingCartItems.RemoveRange(items);
         await _context.SaveChangesAsync();
+
+        ShoppingCartItems = new();
     }
 }
