@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -26,9 +27,10 @@ public class OrdersController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var userId = string.Empty;
+        string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        string userRole = User.FindFirstValue(ClaimTypes.Role);
 
-        var orders = await _ordersService.GetOrdersByUserIdAsync(userId);
+        var orders = await _ordersService.GetOrdersByUserIdAndRoleAsync(userId, userRole);
 
         return View(orders);
     }
@@ -72,8 +74,8 @@ public class OrdersController : Controller
     public async Task<IActionResult> CompleteOrder()
     {
         var items = _shoppingCart.GetShoppingCartItems();
-        string userId = string.Empty;
-        string userEmailAddress = string.Empty;
+        string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        string userEmailAddress = User.FindFirstValue(ClaimTypes.Email);
 
         await _ordersService.StoreOrderAsync(items, userId, userEmailAddress);
         await _shoppingCart.ClearShoppingCartAsync();
