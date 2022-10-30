@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using eTickets.Data;
+using eTickets.Data.ViewModels;
 using eTickets.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -24,8 +25,6 @@ public class AccountController : Controller
         _context = context;   
     }
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+    public IActionResult Login()
+        => View(new LoginViewModel());
 }
