@@ -3,7 +3,7 @@
 - An app for buying movie tickets online.
 ---
 - Source Code: [eTickets](src/eTickets)
-- Web Site: https://e-tickets-app.azurewebsites.net
+- Web Site (works up to the end of november): https://e-tickets-app.azurewebsites.net
 ---
 - MVC documentation
   - [What is MVC?](docs/whats-mvc.md)
